@@ -36,7 +36,7 @@ delete boy.hobbies
 console.log(boy)
 
 
-//Adding method/function to obejct
+//Adding method/function to obejct Important
 
 boy.fullName = function(){
     return `${this.firstName} ${this.lastName}`
@@ -61,3 +61,4 @@ const person1 = {
 }
 
 console.log(person1.fullName())
+

@@ -183,3 +183,106 @@ const averageNumber = (arr) => {
 let result10 = averageNumber(arr)
 console.log(result10)
 
+//Create objects
+person = {}
+person.name = "Hasan";
+person.age = 29
+person.isMarried = true;
+console.log(person)
+
+// or
+
+const boy = {
+    firstName: "hasan",
+    age: 29,
+    isMarried: true,
+    hobbies: ["coding","hill climbing"]
+}
+
+console.log(boy)
+
+//Accessing objects
+console.log(boy.firstName)
+console.log(boy["hobbies"])
+
+//deleting the objects
+delete boy.hobbies
+
+console.log(boy)
+
+//checking if key present
+console.log(boy.hasOwnProperty("firstName"))
+
+//checking if value present
+console.log(Object.values(boy).includes("hasan"))
+
+//iterating values
+Object.values(boy).forEach((data)=>{
+    console.log(data, "values")
+})
+
+//iterating key values
+Object.entries(boy).forEach((entry, index)=>{
+    console.log(entry, index, "key values")
+})
+
+
+const person1 = {
+    firsName: "hasan",
+    lastName: "ali",
+    status: false,
+    isAdmin: true,
+    age: 29,
+    hobbies: ["tea","code"],
+    isMarried: true,
+    viewCount: 40
+}
+
+const myEntries = Object.entries(person1)
+myEntries.forEach(function([entry, index]){
+    console.log(`${entry} - ${index}`)
+})
+
+
+
+const arr2 = [1,2,3,4,5];
+
+const [n1,n2,n3,n4,n5,n6] = arr
+
+
+const bar = [
+    {name: "asheel", age: 25},
+    {name: "john", age: 44}
+]
+
+const obj = {
+    firstName: "Hasan",
+    age: 29
+}
+
+const {firstName: myName, age: myAge } = obj //myName returns "Hasan"
+
+
+
+
+// # I/P: 
+let str11 = "aaaabbcbbb"
+// # O/P:
+// # ["b", 5]
+
+const ans111 = (str) => {
+    let obj = {}
+    str.split("").forEach((ele) => {
+        if(obj.hasOwnProperty(ele)){
+            obj[ele] += 1
+        }else{
+            obj[ele] = 1
+        }
+    })
+    let maxKeyValue = Object.entries(obj).reduce((prev, next) => {
+        return prev[1] > next[1] ? prev : next
+    })
+    return maxKeyValue
+}
+let res111 = ans111(str11)
+console.log(res111)

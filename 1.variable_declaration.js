@@ -39,5 +39,5 @@ let greetUser = () => {
 }
 
 
-
+console.log(typeof "dad") // o/p:- string
 

@@ -36,9 +36,18 @@ myKeys.forEach(function(data){
 const myValues = Object.values(person1)
 console.log(myValues)
 
-// 5. object.entries
+// 5. object.entries (this is actual iteration of object)
 const myEntries = Object.entries(person1)
-myEntries.forEach(function(key, value){
-    console.log(`${key} - ${value}`)
+myEntries.forEach(function([k, v]){
+    console.log(`${k} - ${v}`)
 })
+
+
+// 6. The hasOwnProperty method checks whether key present
+console.log(boy.hasOwnProperty("firstName"))  // O/P:- true
+
+// 6. The includes method checks whether value present
+console.log(Object.values(boy).includes("hasan"))  // O/P:- true
+
+
 
