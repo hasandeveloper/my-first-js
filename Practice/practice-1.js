@@ -286,3 +286,100 @@ const ans111 = (str) => {
 }
 let res111 = ans111(str11)
 console.log(res111)
+
+
+// # I/P:
+let arr222 = ["C", "C", "A", "B"]
+// let arr222 = ["C", "A", "B"]
+// # O/P:
+// # ["C", 2]
+// # nil
+
+const uniq = (arr) => {
+    let uniqElements = arr.reduce((acc, val) =>{
+        if(!acc.includes(val)){
+            acc.push(val)
+        }
+        return acc
+    }, [])
+
+    return uniqElements
+}
+
+
+
+
+const vote = (arr) => {
+    if(arr.length == uniq(arr).length){
+        let res = "nil"
+        return res
+    }
+    
+    let obj = {}
+    arr.forEach((ele) => {
+        if(!obj.hasOwnProperty(ele)){
+            obj[ele] = 1
+        }else{
+            obj[ele] += 1
+        }
+    })
+    let res = Object.entries(obj).reduce((prev, next) => {
+        return prev[1] > next[1] ? prev : next
+    })
+    return res
+    debugger
+}
+
+let res33 = vote(arr222)
+console.log(res33, "test")
+
+
+const newUserPromise = new Promise((resolve, reject) => {
+    let user = {
+        name: "hasan",
+        age: 29
+    }
+
+    let isFetched = true
+    if(isFetched){
+        resolve(user)
+    }else{
+        reject("Error")
+    }
+})
+
+// newUserPromise.then((resolveData) => {
+//     alert(resolveData.name)
+// }).catch((error) => {
+//     alert(error)
+// })
+
+const array34 = [ 1, 2, 3, 4, 10, 12, 14, 17, 20, 23, 25, 27, 31, 33, 40, 43, 51, 53, 57, 59, 60, 67, 73, 76, 80, 87, 92, 93, 97, "string", 3.14, 0, undefined, false, true, ""]
+
+
+// # With out using any inbuilt method identify the odd and even numbers from the given
+
+const ans34 = (arr) => {
+    let result = arr.map((ele) => {
+         if( typeof ele === 'number' ){
+            //  debugger
+            return ele
+         }
+    })
+    result
+}
+let res34 = ans34(array34)
+console.log(res34)
+
+
+
+const x123 = [{"a": 10},{"b": 20},{"c": 30}]
+
+const res123 = (x) => {
+    let sum = x.reduce((acc, data) => {
+        // debugger
+        return acc += Object.values(data)[0]
+    }, 0)
+    return sum
+}
+console.log(res123(x123))
